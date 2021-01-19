@@ -27,10 +27,10 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
       - run: make get-deps
-      - run: make all-variants
+      - run: make linux-amd64
       - run: make test
 
       - uses: actions/upload-artifact@v2.2.2
         with:
           name: amazon-ecr-credential-helper
-          path: bin/local/docker-credential-ecr-login 
+          path: bin/linux-amd64/docker-credential-ecr-login 
